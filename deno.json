@@ -1,0 +1,19 @@
+{
+  "imports": {
+    "@std/path": "jsr:@std/path@^1.0.6",
+    "@zip-js/zip-js": "jsr:@zip-js/zip-js@^2.7.52",
+    "hono": "jsr:@hono/hono@^4.6.5"
+  },
+  "tasks": {
+    "start": "deno run -NRW main.ts",
+    "start:https": "deno run -NRW main.ts --cert cert.pem --key key.pem",
+    "makecert": "openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes -subj '/CN=localhost'"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  },
+  "fmt": {
+    "lineWidth": 120
+  }
+}
